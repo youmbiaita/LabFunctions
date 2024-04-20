@@ -110,5 +110,13 @@ function removeAge (objects, callback) {
 }
 console.log(removeAge(data, getAges));
 
+//Callback Function: map
+Object.keys(data).forEach(key => {
+        console.log(Object.keys(data[key])[2]);
+});
+console.log(data);
+
+
+
 
 
