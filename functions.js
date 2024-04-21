@@ -147,17 +147,34 @@ console.log("==================================")
 console.log("Part3: Thinking Criticaly");
 
 //Take an object and increment its age field.
-
-function incrementAge (add) {
-   let addAge = [];
-   for(let i = 0; i < add.length; i++){
-    if(add[2] === modifiedData[i]){
-        addAge.push(add.age++);
+function incrementAge(obj) {
+    if( obj.age) {
+        obj.age = (parseInt(obj.age) + 1).toString();
+    }else {
+        obj.age = "0";
     }
-   }
+    obj.updated_at = new Date();
+    
+    return obj;
 }
-console.log(incrementAge(modifiedData))
+const objectIndex = 1;
+console.log(incrementAge(modifiedData[objectIndex]));
 
+// make  copy
+function incrementAgeCopy(objt) {
+    let copy = Object.assign({}, objt);
+    if( copy.age) {
+        copy.age = (parseInt(copy.age) + 1).toString();
+    }else {
+        copy.age = "0";
+    }
+    
+    copy.updated_at = new Date();
+    
+    return copy;
+}
+const objectIndex2 = 2;
+console.log(incrementAgeCopy(modifiedData[objectIndex]));
 
 
  
